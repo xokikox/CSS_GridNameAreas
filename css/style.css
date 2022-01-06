@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300&family=Poppins:ital,wght@0,400;1,200&display=swap');
+:root {
+    --my-padding: 0.4rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    color: rgb(255, 255, 255);
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2rem;
+    display: grid;
+    grid-template-columns: 0.7fr 1fr;
+    grid-template-rows: 0.2fr 1fr 0.5fr 0.5fr 0.4fr;
+    grid-template-areas: 
+    "nav main"
+    "content1 content1"
+    "content2 footer"
+    "content2 sidebar"
+    "content3 content3"
+    ;
+    height: 100vh;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+nav {
+    background-color: chocolate;
+    grid-area: nav;
+    padding: var(--my-padding);
+    display: grid;
+    align-items: center;
+    height: 100%; 
+}
+
+
+.content1 {
+    background-color: turquoise;
+    grid-area: content1;
+    padding: var(--my-padding);
+    display: grid;
+    align-items: center;
+
+}
+
+.content2 {
+    background-color: rgb(64, 67, 224);
+    grid-area: content2;
+    padding: var(--my-padding);
+    display: grid;
+    align-items: center;
+}
+
+.content3 {
+    background-color: rgb(219, 64, 224);
+    grid-area: content3;
+    padding: var(--my-padding);
+    display: grid;
+    align-items: center; 
+}
+
+.sidebar {
+    background-color: rgb(218, 181, 219);
+    grid-area: sidebar;
+    padding: var(--my-padding); 
+    display: grid;
+    align-items: center;
+}
+
+main {
+    background-color: rgb(124, 119, 117);
+    grid-area: main;
+    padding: var(--my-padding);
+    display: grid;
+    align-items: center;
+}
+
+footer {
+    background-color: wheat;
+    grid-area: footer;
+    padding: var(--my-padding);
+    display: grid;
+    align-items: center;
+}
+
+@media (max-width: 1024px) {
+    
+    .container {
+        grid-template-columns: 0.7fr 1fr 1fr;
+        grid-template-rows: 0.3fr 1fr 1fr 0.5fr 0.4fr;
+        grid-template-areas: 
+           "nav nav nav" 
+           "content1 content1 content1" 
+           "main content2 content2"
+           "main content3 content3"
+           "main sidebar footer"     
+        ;
+    }
+    
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        display: block;
+    }
+    
+    .container {
+        gap: 0;
+       grid-template-columns: 1fr; 
+       grid-template-rows: 1fr 1fr 1fr 2fr 1fr 1fr 1fr;
+       grid-template-areas:
+       "nav"
+       "main"
+       "content1"
+       "content2"
+       "content3"
+       "sidebar"
+        "footer"
+       ;
+    }
+}
